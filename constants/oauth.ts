@@ -7,14 +7,16 @@ const bundleId = "com.vietkhang.math40edu";
 const timestamp = bundleId.split(".").pop()?.replace(/^t/, "") ?? "";
 const schemeFromBundleId = `manus${timestamp}`;
 
+const MANAGED_API_BASE_URL ="https://3000-iaisvr0fc65lo7t7xtp7o-65a13fb4.sg1.manus.computer";
+
 const env = {
   portal: process.env.EXPO_PUBLIC_OAUTH_PORTAL_URL ?? "",
   server: process.env.EXPO_PUBLIC_OAUTH_SERVER_URL ?? "",
   appId: process.env.EXPO_PUBLIC_APP_ID ?? "",
   ownerId: process.env.EXPO_PUBLIC_OWNER_OPEN_ID ?? "",
   ownerName: process.env.EXPO_PUBLIC_OWNER_NAME ?? "",
-  apiBaseUrl: process.env.EXPO_PUBLIC_API_BASE_URL ?? "",
-  deepLinkScheme: schemeFromBundleId,
+  apiBaseUrl: process.env.EXPO_PUBLIC_API_BASE_URL ?? MANAGED_API_BASE_URL,
+  deepLinkScheme: schemeFromBundleId
 };
 
 export const OAUTH_PORTAL_URL = env.portal;

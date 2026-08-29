@@ -139,3 +139,10 @@
 - [ ] Explain the purpose of checkpoint `manus-webdev://fe8021e4`
 - [ ] Package the latest complete React Native project into one ZIP
 - [ ] Validate the ZIP contents and deliver the download link
+
+
+## Phase 24: Fix course catalog loading in Play testing
+- [x] Inspect the malformed `learning.courses` tRPC request and client input serialization
+- [x] Validate the Topics query against the learning router input contract
+- [x] Verify TiDB course rows and backend course response
+- [x] Validate the fix and document the required app update/retest step
