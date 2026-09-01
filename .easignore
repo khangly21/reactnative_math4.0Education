@@ -1,0 +1,17 @@
+# Keep EAS uploads small and avoid shipping local native/signing junk.
+.expo/
+dist/
+web-build/
+android/
+ios/
+coverage/
+*.log
+
+# Signing material — use EAS credentials, never upload keystores
+credentials/
+credentials.json
+*.jks
+*.keystore
+
+# Not needed to compile the Android client
+tests/

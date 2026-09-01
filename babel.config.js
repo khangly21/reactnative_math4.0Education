@@ -1,18 +1,11 @@
 module.exports = function (api) {
   api.cache(true);
-  let plugins = [];
-
-  plugins.push("react-native-worklets/plugin");
-  //Trong file babel.config.js, plugin "react-native-reanimated/plugin" luôn phải nằm ở cuối danh sách plugin — sau tất cả các plugin khác.
-
-  // 👇 Thêm dòng này cuối cùng
-  plugins.push("react-native-reanimated/plugin");
-
   return {
     presets: [
+      ["babel-preset-expo", { jsxImportSource: "nativewind" }],
       "nativewind/babel",
-      ["babel-preset-expo", { jsxImportSource: "nativewind" }]
     ],
-    plugins,
+    // babel-preset-expo 54 already injects react-native-worklets/plugin
+    // (and reanimated/plugin is an alias of the same plugin). Do not add them again.
   };
 };
